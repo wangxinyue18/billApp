@@ -590,13 +590,13 @@ export async function handleExcel(fileData) {
     console.log(dianxing + '   ' + stocksf4 + '  ' + sum1d + '  ' + (sum1d - sum3d - sum5d) + ' ' + sum3d + '  ' + sum5d + '  ' + sum7d + '  ' + sum9d)
     console.log(dianxing + ' ' + stocksf44 + '  ' + sum2d + '  ' + (sum2d - sum4d - sum6d) + '  ' + sum4d + '  ' + sum6d + '  ' + sum8d + '  ' + sum10d)
 
-
+    console.log((test - sum3 - sum5))
     let detailbillsheets2 = xlsxData.详单文件表[0].data
-    let detailtitle2 = detailbillsheets[0]
+    let detailtitle2 = detailbillsheets2[0]
     // console.log(detailtitle + '❀')
     let detaillists2 = []
     detailbillsheets2.forEach((item, index) => {
-        if (index == 1) {
+        if (index == 0) {
             detaillists2.push({
                 [detailtitle2[18]]: yidong + tfyidong + liantong + dianxing,
                 [detailtitle2[19]]: stocksf1,
@@ -606,10 +606,10 @@ export async function handleExcel(fileData) {
                 [detailtitle2[23]]: stocksf3,
                 [detailtitle2[24]]: stocksf33,
                 [detailtitle2[25]]: stocksf4,
-                [detailtitle2[26]]: stocksf4
+                [detailtitle2[26]]: stocksf44
             })
         }
-        else if (index == 2) {
+        else if (index == 1) {
             detaillists2.push({
                 [detailtitle2[18]]: test + sum2 + sum1b + sum2b + sum1c + sum2c + sum1d + sum2d,
                 [detailtitle2[19]]: test,
@@ -622,7 +622,7 @@ export async function handleExcel(fileData) {
                 [detailtitle2[26]]: sum2d
             })
         }
-        else if (index == 3) {
+        else if (index == 2) {
             detaillists2.push({
                 [detailtitle2[18]]: (test - sum3 - sum5) + (sum2 - sum4 - sum6) + (sum1b - sum3b - sum5b) + (sum2b - sum4b - sum6b) + (sum1c - sum3c - sum5c) + (sum2c - sum4c - sum6c) + (sum1d - sum3d - sum5d) + (sum2d - sum4d - sum6d),
                 [detailtitle2[19]]: (test - sum3 - sum5),
@@ -636,7 +636,7 @@ export async function handleExcel(fileData) {
             })
         }
 
-        else if (index = 4) {
+        else if (index = 3) {
             detaillists2.push({
                 [detailtitle2[18]]: sum3 + sum4 + sum3b + sum4b + sum3c + sum4c + sum3d + sum4d,
                 [detailtitle2[19]]: sum3,
@@ -650,9 +650,9 @@ export async function handleExcel(fileData) {
 
             })
         }
-        else if (index == 5) {
+        else if (index == 4) {
             detaillists2.push({
-                [detailtitle2[18]]: sum3 + sum4 + sum3b + sum4b + sum3c + sum4c + sum3d + sum4d,
+                [detailtitle2[18]]: sum5 + sum6 + sum5b + sum6b + sum5c + sum6c + sum5d + sum5d,
                 [detailtitle2[19]]: sum5,
                 [detailtitle2[20]]: sum6,
                 [detailtitle2[21]]: sum5b,
@@ -664,8 +664,23 @@ export async function handleExcel(fileData) {
 
             })
 
+
         }
-        if (index != 1 || index != 2 || index != 3 || index != 4 || index != 5) {
+        else if (index == 5) {
+            detaillists2.push({
+                [detailtitle2[18]]: sum7 + sum8 + sum7b + sum8b + sum7c + sum8c + sum7d + sum8d,
+                [detailtitle2[19]]: sum7,
+                [detailtitle2[20]]: sum8,
+                [detailtitle2[21]]: sum7b,
+                [detailtitle2[22]]: sum8b,
+                [detailtitle2[23]]: sum7c,
+                [detailtitle2[24]]: sum8c,
+                [detailtitle2[25]]: sum7d,
+                [detailtitle2[26]]: sum8d
+
+            })
+        }
+        else if (index == 6) {
             detaillists2.push({
                 [detailtitle2[18]]: 0,
                 [detailtitle2[19]]: 0,
@@ -702,7 +717,6 @@ export async function handleExcel(fileData) {
                 '联通新增': item.联通新增,
                 '电信存量': item.电信存量,
                 '电信新增': item.电信新增,
-
             }
             jsonArray.push(temp);
         });
@@ -880,7 +894,7 @@ export async function handleExcel(fileData) {
         if (item.运营商 == '移动') {
             if (item.产品服务费与上月相比是否变化 == '新增') {
                 numxz1 = numxz1 + 1
-                money1 = parseInt(money1 + item.产品服务费合计1 + item.产品服务费合计2 + item.油机发电服务费1 + item.油机发电服务费2)
+                money1 = parseInt(money1 + item.产品服务费合计1)
                 repare1 = parseInt(repare1 + item.维护费1 + item.维护费2)
                 placer1 = parseInt(placer1 + item.场地费1 + item.场地费2)
                 oilw2 = parseInt(oilw2 + item.油机发电服务费1 + item.油机发电服务费2)
@@ -888,7 +902,7 @@ export async function handleExcel(fileData) {
             }
             else if (item.产品服务费与上月相比是否变化 == '存量') {
                 numcl1 = numcl1 + 1
-                money2 = parseInt(money2 + item.产品服务费合计1 + item.产品服务费合计2 + item.油机发电服务费1 + item.油机发电服务费2)
+                money2 = parseInt(money2 + item.产品服务费合计1)
                 repare2 = parseInt(repare2 + item.维护费1 + item.维护费2)
                 placer2 = parseInt(placer2 + item.场地费1 + item.场地费2)
                 oilw1 = parseInt(oilw1 + item.油机发电服务费1 + item.油机发电服务费2)
@@ -898,7 +912,7 @@ export async function handleExcel(fileData) {
         else if (item.运营商 == '天府移动') {
             if (item.产品服务费与上月相比是否变化 == '新增') {
                 numxz2 = numxz2 + 1
-                money3 = parseInt(money3 + item.产品服务费合计1 + item.产品服务费合计2 + item.油机发电服务费1 + item.油机发电服务费2)
+                money3 = parseInt(money3 + item.产品服务费合计1)
                 repare3 = parseInt(repare3 + item.维护费1 + item.维护费2)
                 placer3 = parseInt(placer3 + item.场地费1 + item.场地费2)
                 oilw3 = parseInt(oilw3 + item.油机发电服务费1 + item.油机发电服务费2)
@@ -906,7 +920,7 @@ export async function handleExcel(fileData) {
             }
             else if (item.产品服务费与上月相比是否变化 == '存量') {
                 numcl2 = numcl2 + 1
-                money4 = parseInt(money4 + item.产品服务费合计1 + item.产品服务费合计2 + item.油机发电服务费1 + item.油机发电服务费2)
+                money4 = parseInt(money4 + item.产品服务费合计1)
                 repare4 = parseInt(repare4 + item.维护费1 + item.维护费2)
                 placer4 = parseInt(placer4 + item.场地费1 + item.场地费2)
                 oilw4 = parseInt(oilw4 + item.油机发电服务费1 + item.油机发电服务费2)
@@ -917,7 +931,7 @@ export async function handleExcel(fileData) {
         else if (item.运营商 == '电信') {
             if (item.产品服务费与上月相比是否变化 == '新增') {
                 numxz3 = numxz3 + 1
-                money5 = parseInt(money5 + item.产品服务费合计1 + item.产品服务费合计2 + item.油机发电服务费1 + item.油机发电服务费2)
+                money5 = parseInt(money5 + item.产品服务费合计1)
                 repare5 = parseInt(repare5 + item.维护费1 + item.维护费2)
                 placer5 = parseInt(placer5 + item.场地费1 + item.场地费2)
                 oilw5 = parseInt(oilw5 + item.油机发电服务费1 + item.油机发电服务费2)
@@ -935,7 +949,7 @@ export async function handleExcel(fileData) {
         else if (item.运营商 == '联通') {
             if (item.产品服务费与上月相比是否变化 == '新增') {
                 numxz4 = numxz4 + 1
-                money7 = parseInt(money7 + item.产品服务费合计1 + item.产品服务费合计2 + item.油机发电服务费1 + item.油机发电服务费2)
+                money7 = parseInt(money7 + item.产品服务费合计1)
                 repare7 = parseInt(repare7 + item.维护费1 + item.维护费2)
                 placer7 = parseInt(placer7 + item.场地费1 + item.场地费2)
                 oilw7 = parseInt(oilw7 + item.油机发电服务费1 + item.油机发电服务费2)
@@ -943,7 +957,7 @@ export async function handleExcel(fileData) {
             }
             else if (item.产品服务费与上月相比是否变化 == '存量') {
                 numcl4 = numcl4 + 1
-                money8 = parseInt(money8 + item.产品服务费合计1 + item.产品服务费合计2 + item.油机发电服务费1 + item.油机发电服务费2)
+                money8 = parseInt(money8 + item.产品服务费合计1)
                 repare8 = parseInt(repare8 + item.维护费1 + item.维护费2)
                 placer8 = parseInt(placer8 + item.场地费1 + item.场地费2)
                 oilw8 = parseInt(oilw8 + item.油机发电服务费1 + item.油机发电服务费2)
@@ -965,10 +979,10 @@ export async function handleExcel(fileData) {
 
 
     let detailbillsheets3 = xlsxData.详单文件表[0].data
-    let detailtitle3 = detailbillsheets[0]
+    let detailtitle3 = detailbillsheets3[0]
     let detaillists3 = []
     detailbillsheets3.forEach((item, index) => {
-        if (index == 1) {
+        if (index == 0) {
             detaillists3.push({
                 [detailtitle3[9]]: numxz1 + numcl1 + numxz2 + numcl2 + numxz3 + numcl3 + numxz4 + numcl4,
                 [detailtitle3[10]]: numxz1,
@@ -981,7 +995,7 @@ export async function handleExcel(fileData) {
                 [detailtitle3[17]]: numcl4
             })
         }
-        else if (index == 2) {
+        else if (index == 1) {
             detaillists3.push({
                 [detailtitle3[9]]: money1 + money2 + money3 + money4 + money5 + money6 + money7 + money8,
                 [detailtitle3[10]]: money1,
@@ -994,7 +1008,7 @@ export async function handleExcel(fileData) {
                 [detailtitle3[17]]: money8
             })
         }
-        else if (index == 3) {
+        else if (index == 2) {
             detaillists3.push({
                 [detailtitle3[9]]: (money1 - repare1 - placer1) + (money2 - repare2 - placer2) + (money3 - repare3 - placer3) + (money4 - repare4 - placer4) + (money5 - repare5 - placer5) + (money6 - repare6 - placer6) + (money7 - repare7 - placer7) + (money8 - repare8 - placer8),
                 [detailtitle3[10]]: (money1 - repare1 - placer1),
@@ -1008,7 +1022,7 @@ export async function handleExcel(fileData) {
             })
         }
 
-        else if (index = 4) {
+        else if (index = 3) {
             detaillists3.push({
                 [detailtitle3[9]]: repare1 + repare2 + repare3 + repare4 + repare5 + repare6 + repare7 + repare8,
                 [detailtitle3[10]]: repare1,
@@ -1022,9 +1036,9 @@ export async function handleExcel(fileData) {
 
             })
         }
-        else if (index == 5) {
+        else if (index == 4) {
             detaillists3.push({
-                [detailtitle3[9]]: sum3 + sum4 + sum3b + sum4b + sum3c + sum4c + sum3d + sum4d,
+                [detailtitle3[9]]: placer1 + placer2 + placer3 + placer4 + placer5 + placer6 + placer7 + placer8,
                 [detailtitle3[10]]: placer1,
                 [detailtitle3[11]]: placer2,
                 [detailtitle3[12]]: placer3,
@@ -1037,7 +1051,21 @@ export async function handleExcel(fileData) {
             })
 
         }
-        if (index != 1 || index != 2 || index != 3 || index != 4 || index != 5) {
+        else if (index ==5) {
+            detaillists3.push({
+                [detailtitle3[9]]: 0,
+                [detailtitle3[10]]: 0,
+                [detailtitle3[11]]: 0,
+                [detailtitle3[12]]: 0,
+                [detailtitle3[13]]: 0,
+                [detailtitle3[14]]: 0,
+                [detailtitle3[15]]: 0,
+                [detailtitle3[16]]: 0,
+                [detailtitle3[17]]: 0
+
+            })
+        }
+        else if (index ==6) {
             detaillists3.push({
                 [detailtitle3[9]]: 0,
                 [detailtitle3[10]]: 0,
@@ -1292,7 +1320,7 @@ export async function handleExcel(fileData) {
     //         if (item.运营商 == '移动') {
     //             if (item.产品服务费与上月相比是否变化 == '存量') {
     //                 stocksf1t = stocksf1t + 1
-    //                 testt = parseFloat(item.产品服务费合计2 + item.产品服务费合计3 + item.罚责赠费合计 + item.油机发电服务费1 + item.油机发电服务费1 + testt)
+    //                 testt = parseFloat(item.产品服务费合计2  + testt)
     //                 // sum1t = parseInt(item.产品服务费合计1 + item.产品服务费合计2 + item.罚责赠费合计 + item.油机发电服务费1 + item.油机发电服务费2 + sum1t)
     //                 sum3t = parseInt(sum3t + item.维护费折扣后金额1 + item.维护费折扣后金额2)//正常
     //                 sum5t = parseInt(sum5t + item.场地费折扣后金额1 + item.场地费折扣后金额2)//正常
@@ -1301,7 +1329,7 @@ export async function handleExcel(fileData) {
     //             }
     //             else if (item.产品服务费与上月相比是否变化 == '新增') {
     //                 stocksf11t = stocksf11t + 1
-    //                 sum2t = parseFloat(item.产品服务费合计2 + item.产品服务费合计3 + item.罚责赠费合计 + item.油机发电服务费1 + item.油机发电服务费1 + sum2t)
+    //                 sum2t = parseFloat(item.产品服务费合计2 + sum2t)
     //                 sum4t = parseInt(sum4t + item.维护费折扣后金额1 + item.维护费折扣后金额2)
     //                 sum6t = parseInt(sum6t + item.场地费折扣后金额1 + item.场地费折扣后金额2)
     //                 sum8t = parseInt(item.油机发电服务费1 + item.油机发电服务费2 + sum8t)
@@ -1312,7 +1340,7 @@ export async function handleExcel(fileData) {
     //         else if (item.运营商 == '天府移动') {
     //             if (item.产品服务费与上月相比是否变化 == '存量') {
     //                 stocksf2t = stocksf2t + 1
-    //                 sum1bt = parseFloat(item.产品服务费合计2 + item.产品服务费合计3 + item.罚责赠费合计 + item.油机发电服务费1 + item.油机发电服务费1 + sum1bt)
+    //                 sum1bt = parseFloat(item.产品服务费合计2 + sum1bt)
     //                 // console.log(item.罚责赠费合计)
     //                 sum3bt = parseInt(sum3bt + item.维护费折扣后金额1 + item.维护费折扣后金额2)
     //                 sum5bt = parseInt(sum5bt + item.场地费折扣后金额1 + item.场地费折扣后金额2)
@@ -1321,7 +1349,7 @@ export async function handleExcel(fileData) {
     //             }
     //             else if (item.产品服务费与上月相比是否变化 == '新增') {
     //                 stocksf22t = stocksf22t + 1
-    //                 sum2bt = parseFloat(item.产品服务费合计2 + item.产品服务费合计3 + item.罚责赠费合计 + item.油机发电服务费1 + item.油机发电服务费1 + sum2bt)
+    //                 sum2bt = parseFloat(item.产品服务费合计2  + sum2bt)
     //                 sum4bt = parseInt(sum4bt + item.维护费折扣后金额1 + item.维护费折扣后金额2)
     //                 sum6bt = parseInt(sum6bt + item.场地费折扣后金额1 + item.场地费折扣后金额2)
     //                 sum8bt = parseInt(sum8bt + item.油机发电服务费1 + item.油机发电服务费2)
@@ -1332,7 +1360,7 @@ export async function handleExcel(fileData) {
     //         else if (item.运营商 == '联通') {
     //             if (item.产品服务费与上月相比是否变化 == '存量') {
     //                 stocksf3t = stocksf3t + 1
-    //                 sum1ct = parseFloat(item.产品服务费合计2 + item.产品服务费合计3 + item.罚责赠费合计 + item.油机发电服务费1 + item.油机发电服务费1 + sum1ct)
+    //                 sum1ct = parseFloat(item.产品服务费合计2  + sum1ct)
     //                 sum3ct = parseInt(sum3ct + item.维护费折扣后金额1 + item.维护费折扣后金额2)
     //                 sum5ct = parseInt(sum5ct + item.场地费折扣后金额1 + item.场地费折扣后金额2)
     //                 sum7ct = parseInt(sum7ct + item.油机发电服务费1 + item.油机发电服务费2)
@@ -1340,7 +1368,7 @@ export async function handleExcel(fileData) {
     //             }
     //             else if (item.产品服务费与上月相比是否变化 == '新增') {
     //                 stocksf33t = stocksf33t + 1
-    //                 sum2ct = parseFloat(item.产品服务费合计2 + item.产品服务费合计3 + item.罚责赠费合计 + item.油机发电服务费1 + item.油机发电服务费1 + sum2ct)
+    //                 sum2ct = parseFloat(item.产品服务费合计2  + sum2ct)
     //                 sum4ct = parseInt(sum4ct + item.维护费折扣后金额1 + item.维护费折扣后金额2)
     //                 sum6ct = parseInt(sum6ct + item.场地费折扣后金额1 + item.场地费折扣后金额2)
     //                 sum8ct = parseInt(sum8ct + item.油机发电服务费1 + item.油机发电服务费2)
@@ -1351,7 +1379,7 @@ export async function handleExcel(fileData) {
     //         else if (item.运营商 == '电信') {
     //             if (item.产品服务费与上月相比是否变化 == '存量') {
     //                 stocksf4t = stocksf4t + 1
-    //                 sum1dt = parseFloat(item.产品服务费合计2 + item.产品服务费合计3 + item.罚责赠费合计 + item.油机发电服务费1 + item.油机发电服务费1 + sum1dt)
+    //                 sum1dt = parseFloat(item.产品服务费合计2  + sum1dt)
     //                 sum3dt = parseInt(sum3dt + item.维护费折扣后金额1 + item.维护费折扣后金额2)
     //                 sum5dt = parseInt(sum5dt + item.场地费折扣后金额1 + item.场地费折扣后金额2)
     //                 sum7dt = parseInt(sum7dt + item.油机发电服务费1 + item.油机发电服务费2)
@@ -1359,7 +1387,7 @@ export async function handleExcel(fileData) {
     //             }
     //             else if (item.产品服务费与上月相比是否变化 == '新增') {
     //                 stocksf44t = stocksf44t + 1
-    //                 sum2dt = parseFloat(item.产品服务费合计2 + item.产品服务费合计3 + item.罚责赠费合计 + item.油机发电服务费1 + item.油机发电服务费1 + sum2dt)
+    //                 sum2dt = parseFloat(item.产品服务费合计2  + sum2dt)
     //                 sum4dt = parseInt(sum4dt + item.维护费折扣后金额1 + item.维护费折扣后金额2)
     //                 sum6dt = parseInt(sum6dt + item.场地费折扣后金额1 + item.场地费折扣后金额2)
     //                 sum8dt = parseInt(sum8dt + item.油机发电服务费1 + item.油机发电服务费2)
