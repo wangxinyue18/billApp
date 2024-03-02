@@ -18,7 +18,7 @@ electron.ipcMain.on('upload-file', (event, fileData) => {
   fileData = JSON.parse(fileData);
   const fileName = `upload_${Date.now().toString()}.xlsx`; // 生成一个带时间戳的文件名
   const savePath = path.join(__dirname, '..', 'public', 'uploads', fileName); // 保存路径
-
+console.log(fileData)
   // const 铁塔账单文件表路径 = fileData['铁塔账单文件表'];
   // const data = xlsx.read(铁塔账单文件表路径, { dense: true })
   // console.log('🍑', data, 铁塔账单文件表路径)

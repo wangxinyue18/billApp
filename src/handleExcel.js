@@ -29,7 +29,7 @@ export async function handleExcel(fileData) {
 
         return pre;
     }, {});
-    // console.log(fileData)
+    console.log(fileData)
     console.log('上传的文件数目： ' + Object.keys(xlsxData).length + ' 个')
     // console.log(xlsxData)
 
@@ -62,7 +62,7 @@ export async function handleExcel(fileData) {
             // console.log('❀❀ '+odtransmisslist)
         }
     })
-    // console.log(odtransmisslist)
+    console.log(odtransmisslist)
     console.log('🍌传输订单文件数（已筛选）：' + odtransnum)
     // const transmiss2 = xlsx.parse("D:/typescript/demo/accountbill/transmission.xlsx", {
     //   cellDates: true,
@@ -596,7 +596,9 @@ export async function handleExcel(fileData) {
     // console.log(detailtitle + '❀')
     let detaillists2 = []
     detailbillsheets2.forEach((item, index) => {
+        // console.log(index)
         if (index == 0) {
+            console.log("😊")
             detaillists2.push({
                 [detailtitle2[18]]: yidong + tfyidong + liantong + dianxing,
                 [detailtitle2[19]]: stocksf1,
@@ -610,6 +612,7 @@ export async function handleExcel(fileData) {
             })
         }
         else if (index == 1) {
+            console.log("🤞")
             detaillists2.push({
                 [detailtitle2[18]]: test + sum2 + sum1b + sum2b + sum1c + sum2c + sum1d + sum2d,
                 [detailtitle2[19]]: test,
@@ -623,6 +626,7 @@ export async function handleExcel(fileData) {
             })
         }
         else if (index == 2) {
+            console.log("👌")
             detaillists2.push({
                 [detailtitle2[18]]: (test - sum3 - sum5) + (sum2 - sum4 - sum6) + (sum1b - sum3b - sum5b) + (sum2b - sum4b - sum6b) + (sum1c - sum3c - sum5c) + (sum2c - sum4c - sum6c) + (sum1d - sum3d - sum5d) + (sum2d - sum4d - sum6d),
                 [detailtitle2[19]]: (test - sum3 - sum5),
@@ -636,7 +640,8 @@ export async function handleExcel(fileData) {
             })
         }
 
-        else if (index = 3) {
+        else if (index == 3) {
+            console.log("❀")
             detaillists2.push({
                 [detailtitle2[18]]: sum3 + sum4 + sum3b + sum4b + sum3c + sum4c + sum3d + sum4d,
                 [detailtitle2[19]]: sum3,
@@ -651,6 +656,7 @@ export async function handleExcel(fileData) {
             })
         }
         else if (index == 4) {
+            console.log("🌹")
             detaillists2.push({
                 [detailtitle2[18]]: sum5 + sum6 + sum5b + sum6b + sum5c + sum6c + sum5d + sum5d,
                 [detailtitle2[19]]: sum5,
@@ -667,6 +673,7 @@ export async function handleExcel(fileData) {
 
         }
         else if (index == 5) {
+            console.log("🍊")
             detaillists2.push({
                 [detailtitle2[18]]: sum7 + sum8 + sum7b + sum8b + sum7c + sum8c + sum7d + sum8d,
                 [detailtitle2[19]]: sum7,
@@ -681,6 +688,7 @@ export async function handleExcel(fileData) {
             })
         }
         else if (index == 6) {
+            console.log("🍑")
             detaillists2.push({
                 [detailtitle2[18]]: 0,
                 [detailtitle2[19]]: 0,
@@ -924,7 +932,7 @@ export async function handleExcel(fileData) {
                 repare4 = parseInt(repare4 + item.维护费1 + item.维护费2)
                 placer4 = parseInt(placer4 + item.场地费1 + item.场地费2)
                 oilw4 = parseInt(oilw4 + item.油机发电服务费1 + item.油机发电服务费2)
-                callw4 = parseInt(oilw4 + item.油机发电服务费1 + item.油机发电服务费2)
+                callw4 = parseInt(callw4 + item.产品服务费合计0 + item.产品服务费合计2)
             }
         }
 
@@ -935,7 +943,7 @@ export async function handleExcel(fileData) {
                 repare5 = parseInt(repare5 + item.维护费1 + item.维护费2)
                 placer5 = parseInt(placer5 + item.场地费1 + item.场地费2)
                 oilw5 = parseInt(oilw5 + item.油机发电服务费1 + item.油机发电服务费2)
-                callw5 = parseInt(oilw5 + item.油机发电服务费1 + item.油机发电服务费2)
+                callw5 = parseInt(callw5 + item.油机发电服务费1 + item.油机发电服务费2)
             }
             else if (item.产品服务费与上月相比是否变化 == '存量') {
                 numcl3 = numcl3 + 1
@@ -943,7 +951,7 @@ export async function handleExcel(fileData) {
                 repare6 = parseInt(repare6 + item.维护费1 + item.维护费2)
                 placer6 = parseInt(placer6 + item.场地费1 + item.场地费2)
                 oilw6 = parseInt(oilw6 + item.油机发电服务费1 + item.油机发电服务费2)
-                callw6 = parseInt(oilw6 + item.油机发电服务费1 + item.油机发电服务费2)
+                callw6 = parseInt(callw6 + item.产品服务费合计0 + item.产品服务费合计2)
             }
         }
         else if (item.运营商 == '联通') {
@@ -953,7 +961,7 @@ export async function handleExcel(fileData) {
                 repare7 = parseInt(repare7 + item.维护费1 + item.维护费2)
                 placer7 = parseInt(placer7 + item.场地费1 + item.场地费2)
                 oilw7 = parseInt(oilw7 + item.油机发电服务费1 + item.油机发电服务费2)
-                callw7 = parseInt(oilw7 + item.油机发电服务费1 + item.油机发电服务费2)
+                callw7 = parseInt(callw7 + item.产品服务费合计0 + item.产品服务费合计2)
             }
             else if (item.产品服务费与上月相比是否变化 == '存量') {
                 numcl4 = numcl4 + 1
@@ -961,7 +969,7 @@ export async function handleExcel(fileData) {
                 repare8 = parseInt(repare8 + item.维护费1 + item.维护费2)
                 placer8 = parseInt(placer8 + item.场地费1 + item.场地费2)
                 oilw8 = parseInt(oilw8 + item.油机发电服务费1 + item.油机发电服务费2)
-                callw8 = parseInt(oilw8 + item.油机发电服务费1 + item.油机发电服务费2)
+                callw8 = parseInt(callw8 + item.产品服务费合计0 + item.产品服务费合计2)
             }
         }
 
@@ -981,6 +989,7 @@ export async function handleExcel(fileData) {
     let detailbillsheets3 = xlsxData.详单文件表[0].data
     let detailtitle3 = detailbillsheets3[0]
     let detaillists3 = []
+    console.log(detailbillsheets3)
     detailbillsheets3.forEach((item, index) => {
         if (index == 0) {
             detaillists3.push({
@@ -992,7 +1001,8 @@ export async function handleExcel(fileData) {
                 [detailtitle3[14]]: numxz3,
                 [detailtitle3[15]]: numcl3,
                 [detailtitle3[16]]: numxz4,
-                [detailtitle3[17]]: numcl4
+                [detailtitle3[17]]: numcl4,
+
             })
         }
         else if (index == 1) {
@@ -1005,7 +1015,8 @@ export async function handleExcel(fileData) {
                 [detailtitle3[14]]: money5,
                 [detailtitle3[15]]: money6,
                 [detailtitle3[16]]: money7,
-                [detailtitle3[17]]: money8
+                [detailtitle3[17]]: money8,
+
             })
         }
         else if (index == 2) {
@@ -1018,11 +1029,12 @@ export async function handleExcel(fileData) {
                 [detailtitle3[14]]: (money5 - repare5 - placer5),
                 [detailtitle3[15]]: (money6 - repare6 - placer6),
                 [detailtitle3[16]]: (money7 - repare7 - placer7),
-                [detailtitle3[17]]: (money8 - repare8 - placer8)
+                [detailtitle3[17]]: (money8 - repare8 - placer8),
+
             })
         }
 
-        else if (index = 3) {
+        else if (index == 3) {
             detaillists3.push({
                 [detailtitle3[9]]: repare1 + repare2 + repare3 + repare4 + repare5 + repare6 + repare7 + repare8,
                 [detailtitle3[10]]: repare1,
@@ -1032,7 +1044,8 @@ export async function handleExcel(fileData) {
                 [detailtitle3[14]]: repare5,
                 [detailtitle3[15]]: repare6,
                 [detailtitle3[16]]: repare7,
-                [detailtitle3[17]]: repare8
+                [detailtitle3[17]]: repare8,
+
 
             })
         }
@@ -1046,12 +1059,13 @@ export async function handleExcel(fileData) {
                 [detailtitle3[14]]: placer5,
                 [detailtitle3[15]]: placer6,
                 [detailtitle3[16]]: placer7,
-                [detailtitle3[17]]: placer8
+                [detailtitle3[17]]: placer8,
+
 
             })
 
         }
-        else if (index ==5) {
+        else if (index == 5) {
             detaillists3.push({
                 [detailtitle3[9]]: 0,
                 [detailtitle3[10]]: 0,
@@ -1061,11 +1075,12 @@ export async function handleExcel(fileData) {
                 [detailtitle3[14]]: 0,
                 [detailtitle3[15]]: 0,
                 [detailtitle3[16]]: 0,
-                [detailtitle3[17]]: 0
+                [detailtitle3[17]]: 0,
+
 
             })
         }
-        else if (index ==6) {
+        else if (index == 6) {
             detaillists3.push({
                 [detailtitle3[9]]: 0,
                 [detailtitle3[10]]: 0,
@@ -1102,30 +1117,31 @@ export async function handleExcel(fileData) {
                 '电信新增': item.电信新增,
                 '联通存量': item.联通存量,
                 '联通新增': item.联通新增,
+
             }
             jsonArray.push(temp);
         });
 
         let xls = json2xls(jsonArray);
 
-        fs.writeFileSync('D:/typescript/demo/accountbill/microbill.xlsx', xls, 'binary');
+        fs.writeFileSync('D:/typescript/demo/accountbill/excelbill.xlsx', xls, 'binary');
         console.log('文件已经保存成功🍓')
     })
     //铁塔账单文件
-    // let biggerFilePath1 = fileData.铁塔订单文件表
-    // let biggerFilePath2 = fileData.铁塔账单文件表
-    // let biggerFilePath3 = fileData.终止文件表
-    // async function loadExcel(pathname, sheetNames) {
-    //     const dense_wb = xlsx2.read(fs.readFileSync(pathname))
-    //     return (sheetNames ? sheetNames : dense_wb.SheetNames).reduce((pre, curr) => {
-    //         if (!curr) return pre;
-    //         const sheet = dense_wb.Sheets[curr];
-    //         pre[curr] = xlsx2.utils.sheet_to_json(sheet, {
-    //             raw: true
-    //         });
-    //         return pre;
-    //     }, {});
-    // }
+    let biggerFilePath1 = fileData.铁塔订单文件表
+    let biggerFilePath2 = fileData.铁塔账单文件表
+    let biggerFilePath3 = fileData.终止文件表
+    async function loadExcel(pathname, sheetNames) {
+        const dense_wb = xlsx2.read(fs.readFileSync(pathname))
+        return (sheetNames ? sheetNames : dense_wb.SheetNames).reduce((pre, curr) => {
+            if (!curr) return pre;
+            const sheet = dense_wb.Sheets[curr];
+            pre[curr] = xlsx2.utils.sheet_to_json(sheet, {
+                raw: true
+            });
+            return pre;
+        }, {});
+    }
     // const date = new Date().valueOf();
     // const data1 = await loadExcel(biggerFilePath1).then(data => {
     //     const sheetsNames = Object.keys(data);
@@ -1150,265 +1166,434 @@ export async function handleExcel(fileData) {
     //     console.log('🍎🍎🍎一共耗时', ((new Date().valueOf()) - date) / 1000)
     // })
 
-    // async function main() {
-    //     const data1 = await loadExcel(biggerFilePath1)
-    //     const data2 = await loadExcel(biggerFilePath2)
-    //     const data3 = await loadExcel(biggerFilePath3)
-    //     // console.log('🍑',data1['towerbill1'])
-    //     // console.log('🍑',data2['towerbill1'])
-    //     // console.log('🍑',data3['终止订单表'])
-    //     //铁塔订单文件处理
-    //     let odTowersheet = data1['铁塔订单']
-    //     // let odTowerlist = []
-    //     let odtowernum = 0
-    //     // console.log('🍉', odTowersheet)
-    //     odTowersheet.forEach((item, index) => {
-    //         if (index == 0) {
-    //             return
-    //         }
-    //         else if (item.已暂停出账 != '已暂停计费') {
-    //             odtowernum = odtowernum + 1
-    //         }
-
-    //     })
-    //     console.log('铁塔订单数目：' + odtowernum)
-    //     //铁塔账单文件处理
-    //     let towerSheet = data2['towerbill1']
-    //     let towernum = 0
-    //     towerSheet.forEach((item, index) => {
-    //         towernum = towernum + 1
-    //         if (index == 0) {
-    //             return
-    //         }
-    //         else if (item.运营商 == '移动' && (item.原产权方 == ' 天府新区' || item.原产权方 == ' 双流县' || item.原产权方 == '龙泉驿区')) {
-    //             item.原产权方 = '天府移动'
-
-    //         }
-    //     })
-    //     console.log('铁塔账单数目：' + towernum)
-    //     //终止文件处理
-    //     let forbidenSheet = data3['终止订单表']
-    //     let forbidenlist = []
-    //     let forbidennum = 0
-    //     forbidenSheet.forEach((item, index) => {
-    //         if (index == 0) {
-    //             return
-    //         }
-    //         else if (item.审批状态 == '运营商审批成功') {
-    //             forbidennum = forbidennum + 1
-    //             forbidenlist.push({
-    //                 item
-    //             })
-    //         }
-    //     })
-    //     console.log('终止文件数目：' + forbidennum)
-    //     // console.log(forbidenlist)
-
-
-    //     // 从订单文件向账单传输进行对比😀😀😀
-    //     let numtower1 = 0
-    //     let numtower2 = 0
-    //     for (let i = 0; i < odtowernum; i++) {
-    //         let numtw4 = 0
-    //         let numtw5 = 0
-    //         for (let j = 0; j < towernum; j++) {
-    //             if (odTowersheet[i].订单号 != towerSheet[j].需求确认单编号) {
-    //                 numtw4 = numtw4 + 1
-    //             }
-    //             else if (odTowersheet[i].订单号 == towerSheet[j].需求确认单编号) {
-    //                 //正常订单数目
-    //                 numtower1 = numtower1 + 1
-    //             }
-    //         }
-    //         if (numtw4 == towernum) {
-    //             // console.log('存在可能异常订单号：'+titlelist[i].订单号)
-
-    //             for (let k = 0; k < forbidennum; k++) {
-    //                 if (odTowersheet[i].订单号 == forbidenlist[k].订单编号) {
-    //                     // console.log('终止文件存在正常订单号：' + titlelist[i].订单号)
-    //                     numtower1 = numtower1 + 1
-    //                 }
-    //                 else if (odTowersheet[i].订单号 != forbidenlist[k].订单编号) {
-    //                     numtw5 = numtw5 + 1
-    //                 }
-    //                 if (numtw5 == forbidennum) {
-    //                     // console.log('异常账号' + odtransmisslist[i].订单号 + '原因：在详单里面，但是不在账单里面')
-    //                     numtower2 = numtower2 + 1
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     //从传输订单文件向订单文件传输
-    //     for (let j1 = 0; j1 < towernum; j1++) {
-    //         let numtw3 = 0
-    //         for (let i1 = 0; i1 < odtowernum; i1++) {
-    //             if (towerSheet[j1].需求确认单编号 != odTowersheet[i1].订单号) {
-    //                 numtw3 = numtw3 + 1
-    //             }
-    //             else if (towerSheet[j1].需求确认单编号 == odTowersheet[i1].订单号) {
-    //                 // numcsz = numcsz + 1
-    //             }
-    //         }
-    //         if (numtw3 == odtowernum) {
-    //             // console.log('异常订单' + transmisslists[j1].需求确认单编号 + '原因：出账，但是不在详单里面')
-    //             numtower2 = numtower2 + 1
-    //         }
-    //     }
-    //     console.log("正常订单数：（按照订单文件为基准）" + numtower1)
-    //     console.log("异常订单数：（账单文件＋订单文件）" + numtower2)
+    async function main() {
+        const data1 = await loadExcel(biggerFilePath1)
+        const data2 = await loadExcel(biggerFilePath2)
+        const data3 = await loadExcel(biggerFilePath3)
+        //铁塔订单文件处理
+        let odTowersheet = data1['铁塔订单']
+        let odtowertitle = odTowersheet
+        let odTowerlist = []
+        let odtowernum = 0
+        // console.log('🍉', odTowersheet)
+        odTowersheet.forEach((item, index) => {
+            if (index == 0) {
+                return
+            }
+            else if (item.已暂停出账 != '已暂停计费' && item.订单状态 == '已起租' && item.总费用 != '0.00') {
+                odtowernum = odtowernum + 1
+                odTowerlist.push({
+                    [odtowertitle[0]]: item.订单状态,
+                    [odtowertitle[1]]: item.订单号,
+                    [odtowertitle[2]]: item.总费用,
+                    [odtowertitle[3]]: item.已暂停出账,
+                })
+            }
+        })
+        console.log(odTowerlist)
+        console.log('铁塔订单数目：' + odtowernum)
+        //铁塔账单文件处理
+        let towerSheet = data2['towerbill1']
+        let towernum = 0
+        towerSheet.forEach((item, index) => {
+            towernum = towernum + 1
+            if (index == 0) {
+                return
+            }
+            else if (item.运营商 == '移动' && (item.运营商区县 == '天府新区' || item.运营商区县 == '双流县' || item.运营商区县 == '龙泉驿区')) {
+                item.运营商 = '天府移动'
+                // towerSheet.push({
+                //     item
+                // })
+            }
+        })
+        console.log(towerSheet[4])
+        console.log('铁塔账单数目：' + towernum)
+        //终止文件处理
+        let forbidenSheet = data3['终止订单表']
+        let forbidenlist = []
+        let forbidennum = 0
+        forbidenSheet.forEach((item, index) => {
+            if (index == 0) {
+                return
+            }
+            else if (item.审批状态 == '运营商审批成功') {
+                forbidennum = forbidennum + 1
+                forbidenlist.push({
+                    item
+                })
+            }
+        })
+        console.log('终止文件数目：' + forbidennum)
+        // console.log(forbidenlist)
 
 
+        // 从订单文件向账单传输进行对比😀😀😀
+        let numtower1 = 0
+        let numtower2 = 0
+        for (let i = 0; i < odtowernum; i++) {
+            let numtw4 = 0
+            let numtw5 = 0
+            for (let j = 0; j < towernum; j++) {
+                if (odTowerlist[i].订单号 != towerSheet[j].需求确认单编号) {
+                    numtw4 = numtw4 + 1
+                }
+                else if (odTowerlist[i].订单号 == towerSheet[j].需求确认单编号) {
+                    //正常订单数目
+                    numtower1 = numtower1 + 1
+                    // console.log('正常订单号：'+odTowerlist[i].订单号)
+                }
+            }
+            if (numtw4 == towernum) {
+                // console.log('存在可能异常订单号：'+titlelist[i].订单号)
 
-    //     let yidongt = 0
-    //     let tfyidongt = 0
-    //     let liantongt = 0
-    //     let dianxingt = 0
+                for (let k = 0; k < forbidennum; k++) {
+                    if (odTowerlist[i].订单号 == forbidenlist[k].订单编号) {
+                        // console.log('终止文件存在正常订单号：' + titlelist[i].订单号)
+                        numtower1 = numtower1 + 1
+                        // console.log('正常订单号：'+odTowerlist[i].订单号)
+                    }
+                    else if (odTowerlist[i].订单号 != forbidenlist[k].订单编号) {
+                        numtw5 = numtw5 + 1
+                    }
 
-    //     let stocksf1t = 0
-    //     let stocksf11t = 0
-    //     let stocksf2t = 0
-    //     let stocksf22t = 0
-    //     let stocksf3t = 0
-    //     let stocksf33t = 0
-    //     let stocksf4t = 0
-    //     let stocksf44t = 0
-    //     let sum1t = 0
-    //     let sum2t = 0
-    //     let sum3t = 0
-    //     let sum4t = 0
-    //     let sum5t = 0
-    //     let sum6t = 0
-    //     let sum7t = 0
-    //     let sum8t = 0
-    //     let sum9t = 0
-    //     let sum10t = 0
-    //     let sum1bt = 0
-    //     let sum2bt = 0
-    //     let sum3bt = 0
-    //     let sum4bt = 0
-    //     let sum5bt = 0
-    //     let sum6bt = 0
-    //     let sum7bt = 0
-    //     let sum8bt = 0
-    //     let sum9bt = 0
-    //     let sum10bt = 0
-    //     let sum1ct = 0
-    //     let sum2ct = 0
-    //     let sum3ct = 0
-    //     let sum4ct = 0
-    //     let sum5ct = 0
-    //     let sum6ct = 0
-    //     let sum7ct = 0
-    //     let sum8ct = 0
-    //     let sum9ct = 0
-    //     let sum10ct = 0
-    //     let sum1dt = 0
-    //     let sum2dt = 0
-    //     let sum3dt = 0
-    //     let sum4dt = 0
-    //     let sum5dt = 0
-    //     let sum6dt = 0
-    //     let sum7dt = 0
-    //     let sum8dt = 0
-    //     let sum9dt = 0
-    //     let sum10dt = 0
-    //     let testt = 0
-    //     // console.log(buildinnlist)
-    //     //申明数组
-    //     towerSheet.forEach((item, index) => {
+                }
+                if (numtw5 == forbidennum) {
+                    // console.log('异常账号' + odtransmisslist[i].订单号 + '原因：在详单里面，但是不在账单里面')
+                    numtower2 = numtower2 + 1
+                    // console.log('異常賬號🍑：',odTowerlist[i].訂單號)
+                }
+            }
+        }
+        //从传输订单文件向订单文件传输
+        for (let j1 = 0; j1 < towernum; j1++) {
+            let numtw3 = 0
+            for (let i1 = 0; i1 < odtowernum; i1++) {
+                if (towerSheet[j1].需求确认单编号 != odTowerlist[i1].订单号) {
+                    numtw3 = numtw3 + 1
+                }
+                else if (towerSheet[j1].需求确认单编号 == odTowerlist[i1].订单号) {
+                    // numcsz = numcsz + 1
+                }
+            }
+            if (numtw3 == odtowernum) {
+                // console.log('异常订单' + transmisslists[j1].需求确认单编号 + '原因：出账，但是不在详单里面')
+                numtower2 = numtower2 + 1
+            }
+        }
+        console.log("正常订单数：（按照订单文件为基准）" + numtower1)
+        console.log("异常订单数：（账单文件＋订单文件）" + numtower2)
 
-    //         if (item.运营商 == '移动') {
-    //             if (item.产品服务费与上月相比是否变化 == '存量') {
-    //                 stocksf1t = stocksf1t + 1
-    //                 testt = parseFloat(item.产品服务费合计2  + testt)
-    //                 // sum1t = parseInt(item.产品服务费合计1 + item.产品服务费合计2 + item.罚责赠费合计 + item.油机发电服务费1 + item.油机发电服务费2 + sum1t)
-    //                 sum3t = parseInt(sum3t + item.维护费折扣后金额1 + item.维护费折扣后金额2)//正常
-    //                 sum5t = parseInt(sum5t + item.场地费折扣后金额1 + item.场地费折扣后金额2)//正常
-    //                 sum7t = parseInt(item.油机发电服务费1 + item.油机发电服务费2 + sum7t)
-    //                 sum9t = parseInt(item.产品服务费合计1 + item.产品服务费合计3 + sum9t)
-    //             }
-    //             else if (item.产品服务费与上月相比是否变化 == '新增') {
-    //                 stocksf11t = stocksf11t + 1
-    //                 sum2t = parseFloat(item.产品服务费合计2 + sum2t)
-    //                 sum4t = parseInt(sum4t + item.维护费折扣后金额1 + item.维护费折扣后金额2)
-    //                 sum6t = parseInt(sum6t + item.场地费折扣后金额1 + item.场地费折扣后金额2)
-    //                 sum8t = parseInt(item.油机发电服务费1 + item.油机发电服务费2 + sum8t)
-    //                 sum10t = parseInt(item.产品服务费合计1 + item.产品服务费合计3 + sum10t)
-    //             }
-    //             yidongt = yidongt + 1
-    //         }
-    //         else if (item.运营商 == '天府移动') {
-    //             if (item.产品服务费与上月相比是否变化 == '存量') {
-    //                 stocksf2t = stocksf2t + 1
-    //                 sum1bt = parseFloat(item.产品服务费合计2 + sum1bt)
-    //                 // console.log(item.罚责赠费合计)
-    //                 sum3bt = parseInt(sum3bt + item.维护费折扣后金额1 + item.维护费折扣后金额2)
-    //                 sum5bt = parseInt(sum5bt + item.场地费折扣后金额1 + item.场地费折扣后金额2)
-    //                 sum7bt = parseInt(sum7bt + item.油机发电服务费1 + item.油机发电服务费2)
-    //                 sum9bt = parseInt(sum9bt + item.产品服务费合计1 + item.产品服务费合计3)
-    //             }
-    //             else if (item.产品服务费与上月相比是否变化 == '新增') {
-    //                 stocksf22t = stocksf22t + 1
-    //                 sum2bt = parseFloat(item.产品服务费合计2  + sum2bt)
-    //                 sum4bt = parseInt(sum4bt + item.维护费折扣后金额1 + item.维护费折扣后金额2)
-    //                 sum6bt = parseInt(sum6bt + item.场地费折扣后金额1 + item.场地费折扣后金额2)
-    //                 sum8bt = parseInt(sum8bt + item.油机发电服务费1 + item.油机发电服务费2)
-    //                 sum10bt = parseInt(sum10bt + item.产品服务费合计1 + item.产品服务费合计3)
-    //             }
-    //             tfyidongt = tfyidongt + 1
-    //         }
-    //         else if (item.运营商 == '联通') {
-    //             if (item.产品服务费与上月相比是否变化 == '存量') {
-    //                 stocksf3t = stocksf3t + 1
-    //                 sum1ct = parseFloat(item.产品服务费合计2  + sum1ct)
-    //                 sum3ct = parseInt(sum3ct + item.维护费折扣后金额1 + item.维护费折扣后金额2)
-    //                 sum5ct = parseInt(sum5ct + item.场地费折扣后金额1 + item.场地费折扣后金额2)
-    //                 sum7ct = parseInt(sum7ct + item.油机发电服务费1 + item.油机发电服务费2)
-    //                 sum9ct = parseInt(sum9ct + item.产品服务费合计1 + item.产品服务费合计3)
-    //             }
-    //             else if (item.产品服务费与上月相比是否变化 == '新增') {
-    //                 stocksf33t = stocksf33t + 1
-    //                 sum2ct = parseFloat(item.产品服务费合计2  + sum2ct)
-    //                 sum4ct = parseInt(sum4ct + item.维护费折扣后金额1 + item.维护费折扣后金额2)
-    //                 sum6ct = parseInt(sum6ct + item.场地费折扣后金额1 + item.场地费折扣后金额2)
-    //                 sum8ct = parseInt(sum8ct + item.油机发电服务费1 + item.油机发电服务费2)
-    //                 sum10ct = parseInt(sum10ct + item.产品服务费合计1 + item.产品服务费合计3)
-    //             }
-    //             liantongt = liantongt + 1
-    //         }
-    //         else if (item.运营商 == '电信') {
-    //             if (item.产品服务费与上月相比是否变化 == '存量') {
-    //                 stocksf4t = stocksf4t + 1
-    //                 sum1dt = parseFloat(item.产品服务费合计2  + sum1dt)
-    //                 sum3dt = parseInt(sum3dt + item.维护费折扣后金额1 + item.维护费折扣后金额2)
-    //                 sum5dt = parseInt(sum5dt + item.场地费折扣后金额1 + item.场地费折扣后金额2)
-    //                 sum7dt = parseInt(sum7dt + item.油机发电服务费1 + item.油机发电服务费2)
-    //                 sum9dt = parseInt(sum9dt + item.产品服务费合计1 + item.产品服务费合计3)
-    //             }
-    //             else if (item.产品服务费与上月相比是否变化 == '新增') {
-    //                 stocksf44t = stocksf44t + 1
-    //                 sum2dt = parseFloat(item.产品服务费合计2  + sum2dt)
-    //                 sum4dt = parseInt(sum4dt + item.维护费折扣后金额1 + item.维护费折扣后金额2)
-    //                 sum6dt = parseInt(sum6dt + item.场地费折扣后金额1 + item.场地费折扣后金额2)
-    //                 sum8dt = parseInt(sum8dt + item.油机发电服务费1 + item.油机发电服务费2)
-    //                 sum10dt = parseInt(sum10dt + item.产品服务费合计1 + item.产品服务费合计3)
-    //             }
-    //             dianxingt = dianxingt + 1
-    //         }
-    //     })
-    //     console.log(testt)
-    //     console.log(testt - sum3t - sum5t)
-    //     console.log(yidongt + '  ' + stocksf1t + ' ' + testt + '  ' + (testt - sum3t - sum5t) + ' ' + sum3t + '  ' + sum5t + '  ' + sum7t + ' ' + sum9t)
-    //     console.log(yidongt + '  ' + stocksf11t + '  ' + sum2t + ' ' + (sum2t - sum4t - sum6t) + '  ' + sum4t + '  ' + sum6t + '  ' + sum8t + '  ' + sum10t)
-    //     console.log(tfyidongt + '  ' + stocksf2t + '  ' + sum1bt + '  ' + (sum1bt - sum3bt - sum5bt) + ' ' + sum3bt + '  ' + sum5bt + '  ' + sum7bt + '  ' + sum9bt)
-    //     console.log(tfyidongt + '  ' + stocksf22t + '  ' + sum2bt + '  ' + (sum2bt - sum4bt - sum6bt) + '  ' + sum4bt + '  ' + sum6bt + '  ' + sum8bt + '  ' + sum10bt)
-    //     console.log(liantongt + '  ' + stocksf3t + '  ' + sum1ct + '  ' + (sum1ct - sum3ct - sum5ct) + ' ' + sum3ct + '  ' + sum5ct + '  ' + sum7ct + '  ' + sum9ct)
-    //     console.log(liantongt + '  ' + stocksf33t + '   ' + sum2ct + '  ' + (sum2ct - sum4ct - sum6ct) + '  ' + sum4ct + '  ' + sum6ct + '  ' + sum8ct + '  ' + sum10ct)
-    //     console.log(dianxingt + '   ' + stocksf4t + '  ' + sum1dt + '  ' + (sum1dt - sum3dt - sum5dt) + ' ' + sum3dt + '  ' + sum5dt + '  ' + sum7dt + '  ' + sum9dt)
-    //     console.log(dianxingt + ' ' + stocksf44t + '  ' + sum2dt + '  ' + (sum2dt - sum4dt - sum6dt) + '  ' + sum4dt + '  ' + sum6dt + '  ' + sum8dt + '  ' + sum10dt)
-    // }
 
-    // main()
+
+        let yidongt = 0
+        let tfyidongt = 0
+        let liantongt = 0
+        let dianxingt = 0
+
+        let stocksf1t = 0
+        let stocksf11t = 0
+        let stocksf2t = 0
+        let stocksf22t = 0
+        let stocksf3t = 0
+        let stocksf33t = 0
+        let stocksf4t = 0
+        let stocksf44t = 0
+        let sum1t = 0
+        let sum2t = 0
+        let sum3t = 0
+        let sum4t = 0
+        let sum5t = 0
+        let sum6t = 0
+        let sum7t = 0
+        let sum8t = 0
+        let sum9t = 0
+        let sum10t = 0
+        let sum1bt = 0
+        let sum2bt = 0
+        let sum3bt = 0
+        let sum4bt = 0
+        let sum5bt = 0
+        let sum6bt = 0
+        let sum7bt = 0
+        let sum8bt = 0
+        let sum9bt = 0
+        let sum10bt = 0
+        let sum1ct = 0
+        let sum2ct = 0
+        let sum3ct = 0
+        let sum4ct = 0
+        let sum5ct = 0
+        let sum6ct = 0
+        let sum7ct = 0
+        let sum8ct = 0
+        let sum9ct = 0
+        let sum10ct = 0
+        let sum1dt = 0
+        let sum2dt = 0
+        let sum3dt = 0
+        let sum4dt = 0
+        let sum5dt = 0
+        let sum6dt = 0
+        let sum7dt = 0
+        let sum8dt = 0
+        let sum9dt = 0
+        let sum10dt = 0
+        let testt = 0
+        let sum1et = 0
+        let sum2et = 0
+        let sum3et = 0
+        let sum4et = 0
+        let sum5et = 0
+        let sum6et = 0
+        let sum7et = 0
+        let sum8et = 0
+        //申明数组
+        towerSheet.forEach((item, index) => {
+
+            if (item.运营商 == '移动') {
+                if (item.产品服务费与上月相比是否变化 == '存量') {
+                    stocksf1t = stocksf1t + 1
+                    sum1t = parseInt(sum1t + item.产品服务费合计1 + + item.油机发电服务费1 + + item.罚责赠费合计)
+                    // sum1t = parseInt(item.产品服务费合计1 + item.产品服务费合计2 + item.罚责赠费合计 + item.油机发电服务费1 + item.油机发电服务费2 + sum1t)
+                    sum3t = parseInt(sum3t + item.维护费折扣后金额1 + item.维护费折扣后金额2)//正常
+                    sum5t = parseInt(sum5t + item.场地费折扣后金额1 + item.场地费折扣后金额2)//正常
+                    sum7t = parseInt(sum7t + item.油机发电服务费1 + item.油机发电服务费2)
+                    sum9t = parseInt(sum9t + item.产品服务费合计0 + item.产品服务费合计2)
+                    sum1et = parseInt(sum1et + item.罚责赠费合计)
+                }
+                else if (item.产品服务费与上月相比是否变化 == '新增') {
+                    stocksf11t = stocksf11t + 1
+                    sum2t = parseInt(sum2t + item.产品服务费合计1 + + item.油机发电服务费1 + item.罚责赠费合计)
+                    sum4t = parseInt(sum4t + item.维护费折扣后金额1 + item.维护费折扣后金额2)
+                    sum6t = parseInt(sum6t + item.场地费折扣后金额1 + item.场地费折扣后金额2)
+                    sum8t = parseInt(sum8t + item.油机发电服务费1 + item.油机发电服务费2)
+                    sum10t = parseInt(sum10t + item.产品服务费合计0 + item.产品服务费合计2)
+                    sum2et = parseInt(sum2et + item.罚责赠费合计)
+                }
+                yidongt = yidongt + 1
+            }
+            else if (item.运营商 == '天府移动') {
+                if (item.产品服务费与上月相比是否变化 == '存量') {
+                    stocksf2t = stocksf2t + 1
+                    sum1bt = parseInt(sum1bt + item.产品服务费合计1 + item.油机发电服务费1 + item.罚责赠费合计)
+                    // console.log(item.罚责赠费合计)
+                    sum3bt = parseInt(sum3bt + item.维护费折扣后金额1 + item.维护费折扣后金额2)
+                    sum5bt = parseInt(sum5bt + item.场地费折扣后金额1 + item.场地费折扣后金额2)
+                    sum7bt = parseInt(sum7bt + item.油机发电服务费1 + item.油机发电服务费2)
+                    sum9bt = parseInt(sum9bt + item.产品服务费合计0 + item.产品服务费合计2)
+                    sum3et = parseInt(sum3et + item.罚责赠费合计)
+                }
+                else if (item.产品服务费与上月相比是否变化 == '新增') {
+                    stocksf22t = stocksf22t + 1
+                    sum2bt = parseInt(sum2bt + item.产品服务费合计1 + item.油机发电服务费1 + item.罚责赠费合计)
+                    sum4bt = parseInt(sum4bt + item.维护费折扣后金额1 + item.维护费折扣后金额2)
+                    sum6bt = parseInt(sum6bt + item.场地费折扣后金额1 + item.场地费折扣后金额2)
+                    sum8bt = parseInt(sum8bt + item.油机发电服务费1 + item.油机发电服务费2)
+                    sum10bt = parseInt(sum10bt + item.产品服务费合计0 + item.产品服务费合计2)
+                    sum4et = parseInt(sum4et + item.罚责赠费合计)
+                }
+                tfyidongt = tfyidongt + 1
+            }
+            else if (item.运营商 == '联通') {
+                if (item.产品服务费与上月相比是否变化 == '存量') {
+                    stocksf3t = stocksf3t + 1
+                    sum1ct = parseInt(sum1ct + item.产品服务费合计1 + item.油机发电服务费1 + item.罚责赠费合计)
+                    sum3ct = parseInt(sum3ct + item.维护费折扣后金额1 + item.维护费折扣后金额2)
+                    sum5ct = parseInt(sum5ct + item.场地费折扣后金额1 + item.场地费折扣后金额2)
+                    sum7ct = parseInt(sum7ct + item.油机发电服务费1 + item.油机发电服务费2)
+                    sum9ct = parseInt(sum9ct + item.产品服务费合计0 + item.产品服务费合计2)
+                    sum5et = parseInt(sum5et + item.罚责赠费合计)
+                }
+                else if (item.产品服务费与上月相比是否变化 == '新增') {
+                    stocksf33t = stocksf33t + 1
+                    sum2ct = parseInt(sum2ct + item.产品服务费合计1 + item.油机发电服务费1 + item.罚责赠费合计)
+                    sum4ct = parseInt(sum4ct + item.维护费折扣后金额1 + item.维护费折扣后金额2)
+                    sum6ct = parseInt(sum6ct + item.场地费折扣后金额1 + item.场地费折扣后金额2)
+                    sum8ct = parseInt(sum8ct + item.油机发电服务费1 + item.油机发电服务费2)
+                    sum10ct = parseInt(sum10ct + item.产品服务费合计0 + item.产品服务费合计2)
+                    sum6et = parseInt(sum6et + item.罚责赠费合计)
+                }
+                liantongt = liantongt + 1
+            }
+            else if (item.运营商 == '电信') {
+                if (item.产品服务费与上月相比是否变化 == '存量') {
+                    stocksf4t = stocksf4t + 1
+                    sum1dt = parseInt(sum1dt + item.产品服务费合计1 + item.油机发电服务费1 + item.罚责赠费合计)
+                    sum3dt = parseInt(sum3dt + item.维护费折扣后金额1 + item.维护费折扣后金额2)
+                    sum5dt = parseInt(sum5dt + item.场地费折扣后金额1 + item.场地费折扣后金额2)
+                    sum7dt = parseInt(sum7dt + item.油机发电服务费1 + item.油机发电服务费2)
+                    sum9dt = parseInt(sum9dt + item.产品服务费合计0 + item.产品服务费合计2)
+                    sum7et = parseInt(sum7et + item.罚责赠费合计)
+                }
+                else if (item.产品服务费与上月相比是否变化 == '新增') {
+                    stocksf44t = stocksf44t + 1
+                    sum2dt = parseInt(sum2dt + item.产品服务费合计1 + item.油机发电服务费1 + item.罚责赠费合计)
+                    sum4dt = parseInt(sum4dt + item.维护费折扣后金额1 + item.维护费折扣后金额2)
+                    sum6dt = parseInt(sum6dt + item.场地费折扣后金额1 + item.场地费折扣后金额2)
+                    sum8dt = parseInt(sum8dt + item.油机发电服务费1 + item.油机发电服务费2)
+                    sum10dt = parseInt(sum10dt + item.产品服务费合计0 + item.产品服务费合计2)
+                    sum8et = parseInt(sum8et + item.罚责赠费合计)
+                }
+                dianxingt = dianxingt + 1
+            }
+        })
+        console.log(yidongt + '  ' + stocksf1t + ' ' + sum1t + '  ' + (testt - sum3t - sum5t - sum1et) + ' ' + sum3t + '  ' + sum5t + '  ' + sum7t + ' ' + sum1et + ' ' + sum9t)
+        console.log(yidongt + '  ' + stocksf11t + '  ' + sum2t + ' ' + (sum2t - sum4t - sum6t - sum2et) + '  ' + sum4t + '  ' + sum6t + '  ' + sum8t + '  ' + sum2et + ' ' + sum10t)
+        console.log(tfyidongt + '  ' + stocksf2t + '  ' + sum1bt + '  ' + (sum1bt - sum3bt - sum5bt - sum3et) + ' ' + sum3bt + '  ' + sum5bt + '  ' + sum7bt + '  ' + sum3et + ' ' + sum9bt)
+        console.log(tfyidongt + '  ' + stocksf22t + '  ' + sum2bt + '  ' + (sum2bt - sum4bt - sum6bt - sum4et) + '  ' + sum4bt + '  ' + sum6bt + '  ' + sum8bt + '  ' + sum4et + ' ' + sum10bt)
+        console.log(liantongt + '  ' + stocksf3t + '  ' + sum1ct + '  ' + (sum1ct - sum3ct - sum5ct - sum5et) + ' ' + sum3ct + '  ' + sum5ct + '  ' + sum7ct + '  ' + sum5et + ' ' + sum9ct)
+        console.log(liantongt + '  ' + stocksf33t + '   ' + sum2ct + '  ' + (sum2ct - sum4ct - sum6ct - sum6et) + '  ' + sum4ct + '  ' + sum6ct + '  ' + sum8ct + '  ' + sum6et + ' ' + sum10ct)
+        console.log(dianxingt + '   ' + stocksf4t + '  ' + sum1dt + '  ' + (sum1dt - sum3dt - sum5dt - sum7et) + ' ' + sum3dt + '  ' + sum5dt + '  ' + sum7dt + '  ' + sum7et + ' ' + sum9dt)
+        console.log(dianxingt + ' ' + stocksf44t + '  ' + sum2dt + '  ' + (sum2dt - sum4dt - sum6dt - sum8et) + '  ' + sum4dt + '  ' + sum6dt + '  ' + sum8dt + '  ' + sum8et + ' ' + sum10dt)
+
+        let detailbillsheets4 = xlsxData.详单文件表[0].data
+        let detailtitle4 = detailbillsheets4[0]
+        let detaillists4 = []
+        console.log(detailtitle4[0])
+        detailbillsheets4.forEach((item, index) => {
+            console.log(index)
+            if (index == 0) {
+                detaillists4.push({
+                    [detailtitle4[0]]: (yidongt + tfyidongt + liantongt + dianxingt),
+                    [detailtitle4[1]]: stocksf1t,
+                    [detailtitle4[2]]: stocksf11t,
+                    [detailtitle4[3]]: stocksf2t,
+                    [detailtitle4[4]]: stocksf22t,
+                    [detailtitle4[5]]: stocksf3t,
+                    [detailtitle4[6]]: stocksf33t,
+                    [detailtitle4[7]]: stocksf4t,
+                    [detailtitle4[8]]: stocksf44t
+                })
+            }
+            else if (index == 1) {
+                detaillists4.push({
+                    [detailtitle4[0]]: (sum1t + sum2t + sum1bt + sum2bt + sum1ct + sum2ct + sum1dt + sum2dt),
+                    [detailtitle4[1]]: sum1t,
+                    [detailtitle4[2]]: sum2t,
+                    [detailtitle4[3]]: sum1bt,
+                    [detailtitle4[4]]: sum2bt,
+                    [detailtitle4[5]]: sum1ct,
+                    [detailtitle4[6]]: sum2ct,
+                    [detailtitle4[7]]: sum1bt,
+                    [detailtitle4[8]]: sum2dt,
+                })
+            }
+            else if (index == 2) {
+                detaillists4.push({
+                    [detailtitle4[0]]: ((sum1t - sum3t - sum5t + sum1et) + (sum2t - sum4t - sum6t - +sum2et) + (sum1bt - sum3bt - sum5bt + sum3et) + (sum2bt - sum4bt - sum6bt + sum4et) + (sum1ct - sum3ct - sum5ct + sum5et) + (sum2ct - sum4ct - sum6ct + sum6et) + (sum1dt - sum3dt - sum5dt + sum7et) + (sum2dt - sum4dt - sum6dt + sum8et)),
+                    [detailtitle4[1]]: (sum1t - sum3t - sum5t + sum1et),
+                    [detailtitle4[2]]: (sum2t - sum4t - sum6t + sum2et),
+                    [detailtitle4[3]]: (sum1bt - sum3bt - sum5bt + sum3et),
+                    [detailtitle4[4]]: (sum2bt - sum4bt - sum6bt + sum4et),
+                    [detailtitle4[5]]: (sum1ct - sum3ct - sum5ct + sum5et),
+                    [detailtitle4[6]]: (sum2ct - sum4ct - sum6ct + sum6et),
+                    [detailtitle4[7]]: (sum1dt - sum3dt - sum5dt + sum7et),
+                    [detailtitle4[8]]: (sum2dt - sum4dt - sum6dt + sum8et),
+                })
+            }
+
+            else if (index == 3) {
+                detaillists4.push({
+                    [detailtitle4[0]]: sum3t + sum4t + sum3bt + sum4bt + sum3ct + sum4ct + sum3dt + sum4dt,
+                    [detailtitle4[1]]: sum3t,
+                    [detailtitle4[2]]: sum4t,
+                    [detailtitle4[3]]: sum3bt,
+                    [detailtitle4[4]]: sum4bt,
+                    [detailtitle4[5]]: sum3ct,
+                    [detailtitle4[6]]: sum4ct,
+                    [detailtitle4[7]]: sum3dt,
+                    [detailtitle4[8]]: sum4dt
+                })
+            }
+            else if (index == 4) {
+                detaillists4.push({
+                    [detailtitle4[0]]: sum5t + sum6t + sum5bt + sum6bt + sum5ct + sum6ct + sum5dt + sum6dt,
+                    [detailtitle4[1]]: sum5t,
+                    [detailtitle4[2]]: sum6t,
+                    [detailtitle4[3]]: sum5bt,
+                    [detailtitle4[4]]: sum6bt,
+                    [detailtitle4[5]]: sum5ct,
+                    [detailtitle4[6]]: sum6ct,
+                    [detailtitle4[7]]: sum5dt,
+                    [detailtitle4[8]]: sum6dt
+                })
+
+            }
+            else if (index == 5) {
+                detaillists4.push({
+                    [detailtitle4[0]]: sum7t + sum8t + sum7bt + sum8bt + sum7ct + sum8ct + sum7dt + sum8dt,
+                    [detailtitle4[1]]: sum7t,
+                    [detailtitle4[2]]: sum8t,
+                    [detailtitle4[3]]: sum7bt,
+                    [detailtitle4[4]]: sum8bt,
+                    [detailtitle4[5]]: sum7ct,
+                    [detailtitle4[6]]: sum8ct,
+                    [detailtitle4[7]]: sum7dt,
+                    [detailtitle4[8]]: sum8dt
+                })
+            }
+            else if (index == 6) {
+                detaillists4.push({
+                    [detailtitle4[0]]: sum1et + sum2et + sum3et + sum4et + sum5et + sum6et + sum7et + sum8et,
+                    [detailtitle4[1]]: sum1et,
+                    [detailtitle4[2]]: sum2et,
+                    [detailtitle4[3]]: sum3et,
+                    [detailtitle4[4]]: sum4et,
+                    [detailtitle4[5]]: sum5et,
+                    [detailtitle4[6]]: sum6et,
+                    [detailtitle4[7]]: sum7et,
+                    [detailtitle4[8]]: sum8et
+                })
+            }
+            else if (index == 7) {
+                detaillists4.push({
+                    [detailtitle4[0]]: sum9t + sum10t + sum9bt + sum10bt + sum9ct + sum10ct + sum9dt + sum10dt,
+                    [detailtitle4[1]]: sum9t,
+                    [detailtitle4[2]]: sum10t,
+                    [detailtitle4[3]]: sum9bt,
+                    [detailtitle4[4]]: sum10bt,
+                    [detailtitle4[5]]: sum9ct,
+                    [detailtitle4[6]]: sum10ct,
+                    [detailtitle4[7]]: sum9dt,
+                    [detailtitle4[8]]: sum10dt
+                })
+            }
+        })
+        console.log(detaillists4)
+        const Jsondata4 = JSON.stringify(detaillists4)
+        const filePath4 = 'D:/typescript/demo/accountbill/data4.json';
+        fs.writeFileSync(filePath4, Jsondata4);
+        console.log(`已将对象数组保存到${filePath4}`);
+
+
+        fs.readFile('D:/typescript/demo/accountbill/data4.json', 'utf8', (err, data) => {
+            if (err) throw err;
+            const json = JSON.parse(data);
+            const jsonArray = [];
+            json.forEach(function (item) {
+                let temp = {
+                    '塔类小计': item.塔类小计,
+                    '成都移动存量': item.成都移动存量,
+                    '成都移动新增': item.成都移动新增,
+                    '天府移动存量': item.天府移动存量,
+                    '天府移动新增': item.天府移动新增,
+                    '联通存量': item.联通存量,
+                    '联通新增': item.联通新增,
+                    '电信存量': item.电信存量,
+                    '电信新增': item.电信新增,
+                }
+                jsonArray.push(temp);
+            });
+
+            let xls = json2xls(jsonArray);
+
+            fs.writeFileSync('D:/typescript/demo/accountbill/towertest2.xlsx', xls, 'binary');
+            console.log('文件已经保存成功❤')
+        })
+    }
+
+    main()
 
 }
 
